@@ -1,0 +1,32 @@
+# Configuración del servidor
+server:
+  port: 8081 # Puerto específico para autenticación
+
+# Configuración de Spring
+spring:
+  application:
+    name: ms-autenticacion # Nombre del microservicio
+  
+  # Configuración de base de datos MySQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/homefixer_autenticacion?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Santiago # BD separada para autenticación
+    username: root # Usuario MySQL
+    password: # Sin contraseña en Laragon
+    driver-class-name: com.mysql.cj.jdbc.Driver # Driver MySQL
+  
+  # Configuración de JPA/Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # Crea tablas al iniciar
+    show-sql: true # Muestra consultas SQL
+    properties:
+      hibernate:
+        format_sql: true # Formatea SQL
+        dialect: org.hibernate.dialect.MySQLDialect # Dialecto MySQL
+
+# Configuración de logging
+logging:
+  level:
+    com.homefixer.autenticacion: INFO # Log nivel INFO
+    org.springframework.web: DEBUG # Log HTTP requests
+    org.springframework.security: DEBUG # Log de seguridad
