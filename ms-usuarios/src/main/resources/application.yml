@@ -1,0 +1,31 @@
+# Configuración del servidor
+server:
+  port: 8080 # Puerto donde correrá el microservicio de usuarios
+
+# Configuración de Spring
+spring:
+  application:
+    name: ms-usuarios # Nombre del microservicio
+  
+  # Configuración de base de datos MySQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/homefixer_usuarios?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Santiago # URL de conexión con creación automática de BD
+    username: root # Usuario de MySQL (por defecto en Laragon)
+    password: # Sin contraseña en Laragon por defecto
+    driver-class-name: com.mysql.cj.jdbc.Driver # Driver MySQL moderno
+  
+  # Configuración de JPA/Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # Crea tablas al iniciar, las borra al cerrar (para desarrollo)
+    show-sql: true # Muestra las consultas SQL en consola
+    properties:
+      hibernate:
+        format_sql: true # Formatea las consultas SQL para mejor lectura
+        dialect: org.hibernate.dialect.MySQLDialect # Dialecto específico para MySQL
+
+# Configuración de logging
+logging:
+  level:
+    com.homefixer.usuarios: INFO # Nivel de log para nuestro paquete
+    org.springframework.web: DEBUG # Log detallado para requests HTTP
