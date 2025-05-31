@@ -19,12 +19,3 @@ Proyecto de microservicios para plataforma de servicios técnicos domiciliarios.
 - MySQL 8.0
 - Laragon (para Windows)
 
-### Pasos para ejecutar:
-
-1. **Iniciar Laragon y MySQL**
-2. **Compilar cada microservicio:**
-```bash
-cd ms-usuarios && mvn clean install && cd ..
-cd ms-autenticacion && mvn clean install && cd ..
-cd ms-solicitudes && mvn clean install && cd ..
-cd ms-asignaciones && mvn clean install && cd ..
