@@ -1,0 +1,31 @@
+# Configuración del servidor
+server:
+  port: 8083 # Puerto específico para asignaciones
+
+# Configuración de Spring
+spring:
+  application:
+    name: ms-asignaciones # Nombre del microservicio
+  
+  # Configuración de base de datos MySQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/homefixer_asignaciones?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Santiago # BD separada para asignaciones
+    username: root # Usuario MySQL
+    password: # Sin contraseña en Laragon
+    driver-class-name: com.mysql.cj.jdbc.Driver # Driver MySQL
+  
+  # Configuración de JPA/Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # Crea tablas al iniciar
+    show-sql: true # Muestra consultas SQL
+    properties:
+      hibernate:
+        format_sql: true # Formatea SQL
+        dialect: org.hibernate.dialect.MySQLDialect # Dialecto MySQL
+
+# Configuración de logging
+logging:
+  level:
+    com.homefixer.asignaciones: INFO # Log nivel INFO
+    org.springframework.web: DEBUG # Log HTTP requests
