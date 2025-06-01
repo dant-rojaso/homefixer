@@ -1,8 +1,8 @@
-# 🏠 Homefixer - Microservicios
+🏠 Homefixer - Microservicios
 
 Proyecto de microservicios para plataforma de servicios técnicos domiciliarios.
 
-## 📋 Microservicios
+📋 Microservicios
 
 | Puerto | Microservicio | Descripción |
 |--------|---------------|-------------|
@@ -11,23 +11,12 @@ Proyecto de microservicios para plataforma de servicios técnicos domiciliarios.
 | 8082 | ms-solicitudes | Gestión del ciclo de vida de solicitudes |
 | 8083 | ms-asignaciones | Asignación de técnicos a solicitudes |
 
-## 🚀 Ejecución
+🚀 Ejecución
 
-### Prerrequisitos
+Prerrequisitos
 - Java 17
 - Maven 3.8+
 - MySQL 8.0
 - Laragon (para Windows)
 
-<<<<<<< HEAD
-### Pasos para ejecutar:
 
-1. **Iniciar Laragon y MySQL**
-2. **Compilar cada microservicio:**
-```bash
-cd ms-usuarios && mvn clean install && cd ..
-cd ms-autenticacion && mvn clean install && cd ..
-cd ms-solicitudes && mvn clean install && cd ..
-cd ms-asignaciones && mvn clean install && cd ..
-=======
->>>>>>> 715029593f2eac755075ea1d8ed6e860907d1dca
